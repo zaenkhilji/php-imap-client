@@ -1063,6 +1063,20 @@ class ImapClient
     {
         return imap_fetchstructure($this->imap, $id);
     }
+	
+    /**
+     * Wrapper for imap_fetchbody()
+     *
+     * @see http://php.net/manual/ru/function.imap-fetchbody.php
+     * @param integer $id
+     * @param integer $partNumber
+     *
+     * @return object
+     */
+    public function imapFetchBody($id, $partNumber = null)
+    {
+        return imap_fetchbody($this->imap, $id, $partNumber);
+    }
 
     /**
      * Convert imap given address into string
